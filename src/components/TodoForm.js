@@ -7,10 +7,22 @@ function TodoForm () {
         completed: false
     });
 
+    const handleInputChange = (event) => {
+        setTodo({
+            ...todo,
+            task: event.target.value
+        })
+    }
+
     return (
         <form>
-            <input />
-            <button />
+            <input
+                name="task"
+                type="text"
+                value={todo.task}
+                onChange={handleInputChange}
+            />
+            <button type="submit"/>
         </form>
     );
 }
