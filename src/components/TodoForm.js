@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import uuid from 'uuid';
+import PropTypes from 'prop-types';
 
-function TodoForm () {
+function TodoForm ({ addTodo }) {
     const [todo, setTodo] = useState({
         id: "",
         task: "",
@@ -14,8 +16,17 @@ function TodoForm () {
         })
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (todo.task.trim()) {
+            addTodo({ ...todo, id: uuid.v4() });
+            // reset the task input
+            setTodo({ ...todo, task: ""});
+        }
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 name="task"
                 type="text"
@@ -25,6 +36,11 @@ function TodoForm () {
             <button type="submit"/>
         </form>
     );
+
 }
+
+TodoForm.PropTypes = {
+    addTodo: PropTypes.func.isRequired 
+};
 
 export default TodoForm;
