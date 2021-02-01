@@ -25,7 +25,6 @@ function Todo({ todo, toggleComplete, removeTodo }) {
             </li>
             <button onClick={handleRemoveClick}>X</button>
         </div>
-
     )
 }
 
