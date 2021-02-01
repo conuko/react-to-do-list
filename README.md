@@ -1,4 +1,4 @@
-# MyReads: A Book Tracking App
+# The Todo List
 
 The Todo List is a small React project. You can add, toggle and delete Todos.
 The status of your Todo List will be saved in your local storage. 
