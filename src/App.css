@@ -11,6 +11,7 @@ body,
 html,
 #root {
   height: 100%;
+  background-color: #F1F0E4;
 }
 
 .todo-form {
